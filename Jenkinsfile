@@ -1,8 +1,5 @@
 pipeline {
     agent any
-        environment {
-        DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"  //This is necessary for Fastlane to access iOS Build things.
-    }
         
     stages {
         stage('GIT PULL') {
