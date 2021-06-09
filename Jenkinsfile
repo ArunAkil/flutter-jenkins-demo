@@ -31,13 +31,13 @@ pipeline {
         //                   distributionGroups: 'Testers'
         //       }
         // }
-        // stage('Flutter Build iOS') {
-        //     steps {
-        //         withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-        //         sh "flutter build ios --release --no-codesign"
-        //         }
-        //     }
-        // }
+        stage('Flutter Build iOS') {
+            steps {
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
+                sh "flutter build ios --release --no-codesign"
+                }
+            }
+        }
         // stage('Make iOS IPA And Distribute') {
         //     steps {
         //         dir('ios'){
