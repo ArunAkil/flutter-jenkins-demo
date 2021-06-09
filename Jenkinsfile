@@ -1,15 +1,25 @@
 pipeline {
     agent any
-
+        
     stages {
         stage('GIT PULL') {
             steps {
                 git branch: "main", url: 'https://github.com/naidok56/flutter-jenkins-demo.git'
             }
         }
+        stage ('Flutter Doctor') {
+            steps {
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
+                sh "flutter doctor -v"
+                }
+            }
+        }
         stage('BUILD') {
             steps {
-                sh "flutter build apk"
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+                sh 'flutter build apk'
+             }
+                
             }
         }
         stage('Distribute Android APK') {
