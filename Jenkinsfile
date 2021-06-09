@@ -41,8 +41,10 @@ pipeline {
         stage('Make iOS IPA And Distribute') {
                 steps {
                     dir('ios'){
+                        withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
                             sh "bundle install"
                             sh "bundle exec fastlane buildAdHoc --verbose" 
+                        }
                     }
                 }
         }
