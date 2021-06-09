@@ -1,4 +1,0 @@
-#Wed Jun 09 14:15:14 SAST 2021
-base.0=/Users/kylen/Desktop/jenkins_test_app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

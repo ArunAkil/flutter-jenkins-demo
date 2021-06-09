@@ -1,2 +1,0 @@
--keep class androidx.core.app.CoreComponentFactory { <init>(); }
--keep class za.co.telkom.jenkins_test_app.MainActivity { <init>(); }
