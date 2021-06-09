@@ -31,5 +31,27 @@ pipeline {
                           distributionGroups: 'Testers'
               }
         }
+                stage('Flutter Build iOS') {
+            steps {
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
+                sh "flutter build ios --release --no-codesign"
+                }
+            }
+        }
+        stage('Make iOS IPA And Distribute') {
+                steps {
+                    dir('ios'){
+                            sh "bundle install"
+                            sh "bundle exec fastlane buildAdHoc --verbose" 
+                    }
+                }
+        }
+        stage('Cleanup') {
+            steps {
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
+                sh "flutter clean"
+                }
+            }
+        }
     }
 }
