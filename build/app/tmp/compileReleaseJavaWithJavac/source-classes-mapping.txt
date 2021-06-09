@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+za/co/telkom/jenkins_test_app/BuildConfig.java
+ za.co.telkom.jenkins_test_app.BuildConfig
+za/co/telkom/jenkins_test_app/MainActivity.java
+ za.co.telkom.jenkins_test_app.MainActivity
