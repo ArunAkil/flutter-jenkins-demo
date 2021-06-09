@@ -14,23 +14,23 @@ pipeline {
                 }
             }
         }
-        stage('BUILD') {
-            steps {
-                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-                sh 'flutter build apk'
-             }
+        // stage('BUILD') {
+        //     steps {
+        //         withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+        //         sh 'flutter build apk'
+        //      }
                 
-            }
-        }
-        stage('Distribute Android APK') {
-            steps {
-                  appCenter apiToken: 'f9789718700a0e7cddf63ac22f6dee769ac22a4b',
-                          ownerName: 'kylen.zn-gmail.com',
-                          appName: 'JenkinsFlutterDemoAnd',
-                          pathToApp: 'build/app/outputs/apk/release/app-release.apk',
-                          distributionGroups: 'Testers'
-              }
-        }
+        //     }
+        // }
+        // stage('Distribute Android APK') {
+        //     steps {
+        //           appCenter apiToken: 'f9789718700a0e7cddf63ac22f6dee769ac22a4b',
+        //                   ownerName: 'kylen.zn-gmail.com',
+        //                   appName: 'JenkinsFlutterDemoAnd',
+        //                   pathToApp: 'build/app/outputs/apk/release/app-release.apk',
+        //                   distributionGroups: 'Testers'
+        //       }
+        // }
         stage('Flutter Build iOS') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
