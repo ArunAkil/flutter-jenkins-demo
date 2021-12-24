@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('GIT PULL') {
             steps {
-                git branch: "main", url: 'https://github.com/naidok56/flutter-jenkins-demo.git'
+                git branch: "main", url: 'https://github.com/ArunAkil/flutter-jenkins-demo.git'
             }
         }
         stage ('Flutter Doctor') {
